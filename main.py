@@ -1,13 +1,12 @@
-# character_creation_module/main.py
+"""The functions of choosing a character and his skills are described.
+Also the calculation of the damage done, the blocking of damage.
+Also the calculation of power special skill.
+"""
 from random import randint
-
-# Новый импорт.
-# Из модуля start_game_banner, который расположен в папке graphic_arts,
-# импортируем функцию run_screensaver().
-from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """Damage calculation."""
     r_damage: int = 0
     if char_class == 'warrior':
         r_damage = 5 + randint(3, 5)
@@ -22,6 +21,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Blocked Damage Calculation."""
     b_damage: int = 0
     if char_class == 'warrior':
         b_damage = 10 + randint(5, 10)
@@ -36,6 +36,7 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Calculate the power of special skills."""
     s_skills: int = 0
     if char_class == 'warrior':
         s_skills = 80 + 25
@@ -52,6 +53,7 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Сharacter training."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -75,6 +77,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Character selection."""
     approve_choice: str = ''
     char_class: str = ''
     while approve_choice != 'y':
