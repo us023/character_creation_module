@@ -2,52 +2,47 @@
 Also the calculation of the damage done, the blocking of damage.
 Also the calculation of power special skill.
 """
+
+
 from random import randint
+
+from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name: str, char_class: str) -> str:
     """Damage calculation."""
-    r_damage: int = 0
     if char_class == 'warrior':
-        r_damage = 5 + randint(3, 5)
-        return (f'{char_name} нанёс урон противнику равный {r_damage} е.д.')
+        return (f'{char_name} нанёс урон противнику равный '
+                f'{5 + randint(3, 5)} е.д.')
     if char_class == 'mage':
-        r_damage = 5 + randint(5, 10)
-        return (f'{char_name} нанёс урон противнику равный {r_damage} е.д.')
+        return (f'{char_name} нанёс урон противнику равный '
+                f'{5 + randint(5, 10)} е.д.')
     if char_class == 'healer':
-        r_damage = 5 + randint(-3, -1)
-        return (f'{char_name} нанёс урон противнику равный {r_damage} е.д.')
+        return (f'{char_name} нанёс урон противнику равный '
+                f'{5 + randint(-3, -1)} е.д.')
     return ''
 
 
 def defence(char_name: str, char_class: str) -> str:
     """Blocked Damage Calculation."""
-    b_damage: int = 0
     if char_class == 'warrior':
-        b_damage = 10 + randint(5, 10)
-        return f'{char_name} блокировал {b_damage} е.д. урона'
+        return f'{char_name} блокировал {10 + randint(5, 10)} е.д. урона'
     if char_class == 'mage':
-        b_damage = 10 + randint(-2, 2)
-        return f'{char_name} блокировал {b_damage} е.д. урона'
+        return f'{char_name} блокировал {10 + randint(-2, 2)} е.д. урона'
     if char_class == 'healer':
-        b_damage = 10 + randint(2, 5)
-        return f'{char_name} блокировал {b_damage} е.д. урона'
+        return f'{char_name} блокировал {10 + randint(2, 5)} е.д. урона'
     return ''
 
 
 def special(char_name: str, char_class: str) -> str:
     """Calculate the power of special skills."""
-    s_skills: int = 0
     if char_class == 'warrior':
-        s_skills = 80 + 25
         return (f'{char_name} применил специальное умение «Выносливость '
-                f'+{s_skills}»')
+                f'+{80 + 25}»')
     if char_class == 'mage':
-        s_skills = 5 + 40
-        return (f'{char_name} применил специальное умение «Атака +{s_skills}»')
+        return (f'{char_name} применил специальное умение «Атака +{5 + 40}»')
     if char_class == 'healer':
-        s_skills = 10 + 30
-        return (f'{char_name} применил специальное умение «Защита +{s_skills}»'
+        return (f'{char_name} применил специальное умение «Защита +{10 + 30}»'
                 )
     return ''
 

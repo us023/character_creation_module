@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Temp
+temp.py
+
+# Graphic_arts
+graphic_arts/*.*
+graphic_arts/
